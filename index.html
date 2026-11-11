@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+    <link rel="stylesheet" href="./mani.css">
+    <title>Document</title>
+</head>
+
+<body class="min-h-screen p-4 md:p-8 bg-gradient-to-br from-violet-300 to-purple-400 to-indigo-300">
+    <div class="bg-slate-100/20 rounded-3xl p-4 md:p-6 mb-4 text-center shadow-xl">
+        <h1 class="font-bold font-serif text-2xl"><span class="text-violet-600 ">MY</span>to-do-list</h1>
+        <p class="font-bold font-serif text-xl">Manage your tasks efficiently</p>
+    </div>
+
+    <body class="min-h-screen p-4 md:p-8 bg-gradient-to-br from-violet-200 via-purple-200 to-indigo-300">
+
+        <div class="mx-auto max-w-6xl flex gap-4 rounded-3xl p-4 md:p-6
+              bg-white/30 backdrop-blur-xl border border-white/50 shadow-xl">
+
+            <!-- Sidebar -->
+            <aside class="hidden md:flex flex-col justify-between items-center w-12">
+                <div class="h-8 w-8 rounded-full bg-violet-600/50 flex items-center justify-center shadow">
+                    <i class="fa-solid fa-rectangle-list" style="color: rgb(0, 0, 0);"></i>
+                </div>
+                <div class="h-8 w-8 rounded-full bg-white/60 flex items-center justify-center shadow">
+                    <i class="fa-solid fa-list-check" style="color: rgb(0, 0, 0);"></i>
+                </div>
+            </aside>
+
+            <!-- المحتوى -->
+            <main class="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+                <!-- العمود الأساسي -->
+                <section class="lg:col-span-2 space-y-4">
+                    <header>
+                        <h1 class="text-2xl font-bold text-slate-800">TaskFlow</h1>
+                        <p class="text-sm text-slate-600">Manage your daily tasks efficiently</p>
+                    </header>
+
+                    <!-- Total tasks -->
+                    <div class="rounded-2xl bg-white/40 border border-white/60 p-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-sm font-semibold text-slate-700">Total tasks</h2>
+                            <span class="text-xs text-slate-500">This week</span>
+                        </div>
+
+                        <p id="total" class="mt-1 text-4xl font-bold text-slate-800">300</p>
+
+                        <div class="mt-4 flex flex-wrap items-center gap-3">
+                            <div
+                                class="flex h-24 w-24 flex-col items-center justify-center rounded-full bg-white/70 shadow">
+                                <span id="completeCount" class="text-2xl font-bold text-slate-800">280</span>
+                                <span class="text-xs text-slate-500">Complete</span>
+                            </div>
+
+                            <div
+                                class="flex h-20 w-20 flex-col items-center justify-center rounded-full bg-violet-400/60 shadow">
+                                <span id="pendingCount" class="text-xl font-bold text-white">12</span>
+                                <span class="text-xs text-white/90">Pending</span>
+                            </div>
+
+                            <div
+                                class="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-violet-700 shadow">
+                                <span id="newCount" class="text-lg font-bold text-white">8</span>
+                                <span class="text-[10px] text-white/90">New</span>
+                            </div>
+
+                            <div class="ml-auto flex flex-col gap-2">
+                                <button
+                                    class="rounded-full bg-white/70 px-4 py-1 text-xs text-slate-700 hover:bg-white">View
+                                    tasks</button>
+                                <button id="addTaskBtn"
+                                    class="rounded-full bg-violet-700 px-4 py-1 text-xs text-white hover:bg-violet-800">Add
+                                    task</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+
+                        <!-- Productivity chart -->
+                        <div class="sm:col-span-3 rounded-2xl bg-white/40 border border-white/60 p-4">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-sm font-semibold text-slate-700">Productivity rate: 78%</h2>
+                                <span class="text-xs text-slate-500">This week</span>
+                            </div>
+
+                            <div class="mt-4 flex h-32 items-end justify-between gap-2">
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-500" style="height:64px;"></div>
+                                    <span class="text-[10px] text-slate-500">Mon</span>
+                                </div>
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-400" style="height:70px;"></div>
+                                    <span class="text-[10px] text-slate-500">Tue</span>
+                                </div>
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-500" style="height:90px;"></div>
+                                    <span class="text-[10px] text-slate-500">Wed</span>
+                                </div>
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-400" style="height:60px;"></div>
+                                    <span class="text-[10px] text-slate-500">Thu</span>
+                                </div>
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-500" style="height:80px;"></div>
+                                    <span class="text-[10px] text-slate-500">Fri</span>
+                                </div>
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-300" style="height:40px;"></div>
+                                    <span class="text-[10px] text-slate-500">Sat</span>
+                                </div>
+                                <div class="flex flex-1 flex-col items-center gap-1">
+                                    <div class="w-full rounded-t-lg bg-violet-300" style="height:30px;"></div>
+                                    <span class="text-[10px] text-slate-500">Sun</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Key metrics -->
+                        <div class="sm:col-span-2 rounded-2xl bg-violet-700 p-4 text-white shadow-lg">
+                            <h2 class="text-sm font-semibold">Key metrics</h2>
+
+                            <div class="mt-3 space-y-3 text-xs">
+                                <div>
+                                    <p class="text-white/70">Tasks completed this week</p>
+                                    <p class="text-lg font-bold">28</p>
+                                </div>
+                                <div>
+                                    <p class="text-white/70">Average completion time</p>
+                                    <p class="text-lg font-bold">5 hours</p>
+                                </div>
+                                <div>
+                                    <p class="text-white/70">New ideas contributed</p>
+                                    <p class="text-lg font-bold">12</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rounded-2xl bg-white/40 border border-white/60 p-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-sm font-semibold text-slate-700">Ongoing projects</h2>
+                            <button class="rounded-full bg-white/70 px-3 py-1 text-xs text-slate-700">View all</button>
+                        </div>
+                        <div class="mt-3 space-y-3 text-xs">
+                            <div>
+                                <div class="flex justify-between text-slate-700">
+                                    <span>Capcut video edit</span><span>78%</span>
+                                </div>
+                                <div class="mt-1 h-2 rounded-full bg-white/60">
+                                    <div class="h-2 rounded-full bg-violet-600" style="width:78%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-700">
+                                    <span>TikTok AI video</span><span>80%</span>
+                                </div>
+                                <div class="mt-1 h-2 rounded-full bg-white/60">
+                                    <div class="h-2 rounded-full bg-violet-600" style="width:80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-700">
+                                    <span>Website design</span><span>62%</span>
+                                </div>
+                                <div class="mt-1 h-2 rounded-full bg-white/60">
+                                    <div class="h-2 rounded-full bg-violet-600" style="width:62%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- العمود الجانبي -->
+                <section class="space-y-4">
+                    <div class="rounded-2xl bg-white/40 border border-white/60 p-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h2 class="text-sm font-semibold text-slate-700">Task status</h2>
+                                <p class="text-xs text-slate-500">Your pending tasks</p>
+                            </div>
+                            <button class="rounded-full bg-violet-700 px-3 py-1 text-xs text-white">View all</button>
+                        </div>
+
+                        <ul id="taskList" class="mt-3 space-y-2 text-xs">
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-700">Capcut video edit</span>
+                                <span class="rounded-full bg-white/70 px-2 py-0.5 text-slate-600">Due: Jan 14</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-700">Powerpoint slide</span>
+                                <span class="rounded-full bg-white/70 px-2 py-0.5 text-slate-600">Due: Jan 20</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-700">Frontier website</span>
+                                <span class="rounded-full bg-white/70 px-2 py-0.5 text-slate-600">Due: Feb 03</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="text-slate-700">Mobile redesign</span>
+                                <span class="rounded-full bg-white/70 px-2 py-0.5 text-slate-600">Due: Feb 11</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rounded-2xl bg-white/40 border border-white/60 p-4">
+                        <h2 class="text-sm font-semibold text-slate-700">Team collaboration</h2>
+                        <p class="text-xs text-slate-500">New ideas contributed: 12</p>
+
+                        <div class="mt-3 flex items-center">
+                            <div
+                                class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-violet-400 text-xs font-bold text-white">
+                                M</div>
+                            <div
+                                class="-ml-2 flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-indigo-500 text-xs font-bold text-white">
+                                W</div>
+                            <div
+                                class="-ml-2 flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-purple-500 text-xs font-bold text-white">
+                                A</div>
+                            <div
+                                class="-ml-2 flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-violet-700 text-xs font-bold text-white">
+                                +3</div>
+
+                            <button
+                                class="ml-auto rounded-full bg-violet-700 px-3 py-1 text-xs text-white hover:bg-violet-800">Add
+                                new</button>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+        <!-- js -->
+        <script src="./mina.js"></script>
+    </body>
+
+</html>
